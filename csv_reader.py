@@ -122,12 +122,12 @@ def create_users(file_path):
             print(valid_email)
 
             try:
+               if valid_email == True:
+                  response=requests.post("https://example.com/api/create_user";,json=row)
 
-               response=requests.post("https://example.com/api/create_user";,json=row)
-
-               if response.status_code != 201:
-                  error_creating_user.append(row['name'])
-                  print("Error creating user:" , row["email"])
+                  if response.status_code != 201:
+                     error_creating_user.append(row['name'])
+                     print("Error creating user:" , row["email"])
 
 
             except Exception as e:
