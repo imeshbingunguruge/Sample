@@ -128,6 +128,8 @@ def create_users(file_path):
                   if response.status_code != 201:
                      error_creating_user.append(row['name'])
                      print("Error creating user:" , row["email"])
+               else:
+                 logging.info("valid email not found for user" + row['name'])
 
 
             except Exception as e:
